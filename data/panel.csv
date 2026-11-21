@@ -1,0 +1,37 @@
+vendor_id,vendor,first_incident,last_incident,longest_silence_days,incidents_jan2020_oct2026
+asana,Asana,2017-07-19,2026-11-13,169,143
+aws,AWS,2018-05-10,2026-11-15,92,444
+bitbucket,Bitbucket,2015-01-06,2026-11-16,60,321
+box,Box,2015-01-08,2026-11-20,83,288
+circleci,CircleCI,2015-01-13,2026-11-20,37,561
+cloudinary,Cloudinary,2015-03-08,2026-10-24,75,217
+confluence,Confluence,2019-02-04,2026-10-01,41,328
+confluent,Confluent Cloud,2018-04-24,2026-11-05,34,679
+contentful,Contentful,2015-01-22,2026-11-09,115,267
+dropbox,Dropbox,2015-10-05,2026-11-20,98,217
+elastic,Elastic Cloud,2015-01-21,2026-11-04,54,505
+figma,Figma,2016-09-28,2026-10-30,109,149
+github,GitHub,2016-12-03,2026-11-19,31,1024
+gusto,Gusto,2017-05-18,2026-06-25,129,149
+hubspot,HubSpot,2016-03-29,2026-11-12,54,354
+imgix,imgix,2015-03-27,2026-09-01,109,118
+jfrog,JFrog Cloud,2016-04-29,2026-10-29,120,217
+jira,Jira,2019-02-04,2026-11-13,49,460
+launchdarkly,LaunchDarkly,2015-02-12,2026-11-17,38,563
+linode,Linode,2015-01-16,2026-11-20,28,579
+mailgun,Mailgun,2015-01-13,2026-11-17,88,165
+monday,monday.com,2019-10-31,2026-11-17,36,412
+mongodb,MongoDB Cloud,2020-01-09,2026-10-20,41,451
+netlify,Netlify,2016-08-22,2026-11-13,40,569
+newrelic,New Relic,2019-10-29,2026-11-04,75,590
+npm,npm,2015-03-13,2026-11-07,106,176
+pusher,Pusher,2015-01-07,2026-08-23,138,157
+redhat,Red Hat,2017-03-08,2026-11-19,38,533
+render,Render,2019-02-07,2026-11-11,41,552
+segment,Segment,2015-01-26,2026-11-11,47,343
+sentry,Sentry,2015-01-22,2026-11-19,57,465
+slack,Slack,2020-01-12,2026-11-11,31,713
+smartsheet,Smartsheet,2015-01-05,2026-11-17,52,367
+trello,Trello,2016-06-10,2026-05-17,90,154
+typeform,Typeform,2015-01-07,2026-08-07,135,192
+vercel,Vercel,2020-03-13,2026-11-18,52,632

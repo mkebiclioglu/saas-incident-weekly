@@ -1,105 +1,95 @@
-# Weekly SaaS & cloud incidents, 2015–2026
+# SaaS & cloud incidents, monthly, 2020–2026
 
-Weekly counts of **publicly reported incidents** from 47 enterprise SaaS and cloud
-infrastructure vendors, January 2015 to mid-November 2026. Every count comes from an
-incident the vendor posted on its own status page, and every incident links back to it.
-None of the counts are estimated or interpolated.
+How many incidents do enterprise SaaS and cloud vendors **publicly report**, and is that
+number going up? Every count here is an incident a vendor posted on its own status page.
+Nothing is estimated or interpolated.
 
-![Weekly incidents chart](incidents_weekly.png)
+## Exhibit 1: a fixed panel of 36 vendors
 
-## What it shows
+![Exhibit 1](exhibit1_panel_monthly.png)
 
-| Year | All 47 vendors (avg/week) | Excluding Twilio | Fixed panel of 17 |
-|---|---:|---:|---:|
-| 2015 | 17.4 | 15.5 | 13.4 |
-| 2016 | 26.1 | 22.1 | 15.8 |
-| 2017 | 30.0 | 25.9 | 15.3 |
-| 2018 | 34.0 | 28.0 | 16.1 |
-| 2019 | 36.2 | 27.6 | 12.9 |
-| 2020 | 57.7 | 35.4 | 15.2 |
-| 2021 | 78.7 | 46.8 | 16.3 |
-| 2022 | 80.3 | 46.7 | 12.5 |
-| 2023 | 86.1 | 52.9 | 16.4 |
-| 2024 | 86.0 | 46.6 | 13.9 |
-| 2025 | 89.5 | 50.2 | 15.4 |
-| 2026 | 94.7 | 56.2 | 14.8 |
+The same 36 vendors are counted every month from Jan 2020 to Oct 2026. They report
+about **170 incidents a month, with no trend**: 164 a month in 2020, 191 at the 2023 high,
+and 167 in 2026 to date.
 
-*(Weeks are Monday–Sunday and grouped by the year the week starts. 2026 runs through the week of 9 Nov.)*
+**Panel:** Asana, AWS, Bitbucket, Box, CircleCI, Cloudinary, Confluence, Confluent Cloud,
+Contentful, Dropbox, Elastic Cloud, Figma, GitHub, Gusto, HubSpot, imgix, JFrog Cloud, Jira,
+LaunchDarkly, Linode, Mailgun, monday.com, MongoDB Cloud, Netlify, New Relic, npm, Pusher,
+Red Hat, Render, Segment, Sentry, Slack, Smartsheet, Trello, Typeform, Vercel.
 
-**The headline count rises about 5x, but most of that rise comes from wider coverage,
-not from more incidents.** The 17 vendors that have published continuously since Q1
-2015 stay flat at roughly 13–16 incidents a week for the whole period. The growth in
-the all-vendor line comes from:
+A vendor is in the panel if it was publishing by Q1 2020, is still publishing in 2026, and
+never went more than 180 days without a post. A gap that long means reporting stopped, not
+that nothing broke. That rule drops Google Cloud (224-day silence in 2025–26), Loggly and
+Travis CI. Twilio is excluded because it posts one notice per carrier and country, which
+would make it 46% of the total.
 
-1. **More vendors joining the sample.** Status pages that started later (GitHub
-   2017, Jira and Confluence 2019, MongoDB, Vercel and Snowflake 2020, DigitalOcean
-   2022, and others) add their incidents only from their start date.
-2. **Twilio.** Since about 2020 Twilio has posted a separate notice for each
-   carrier and country (for example "SMS Delivery Delays to X"). That makes it about
-   37% of all non-maintenance incidents here, which is why it has its own line.
+## Exhibit 2: the big platforms
+
+![Exhibit 2](exhibit2_big_platforms.png)
+
+The hyperscalers' public counts mostly follow **changes in how they report**:
+
+- **AWS.** Until about 2022, AWS posted one event per affected service and Region. The
+  7 Dec 2021 us-east-1 outage appears as 8 events. From 2022 AWS combines them into one
+  "multiple services" post, so the 20 Oct 2025 us-east-1 outage appears once.
+- **Google Cloud.** It posted a median of 15 incidents a month (up to 44) on its public dashboard until mid-2025.
+  After 18 Jul 2025 it nearly stops: 10 posts in the 15 months since. Archived copies of
+  `incidents.json` confirm the feed itself emptied out; this is not a collection gap.
+- **Microsoft Azure.** Its public history holds only Post Incident Reviews (PIRs), kept for
+  5 years, so it starts in Nov 2021. Since Jun 2022, PIRs cover only broad incidents (stated
+  on Azure's status history page).
+- **Slack.** Steady at about 9 incidents a month across the whole period.
+
+These four use different counting rules, so compare each one's trend over time, not their
+levels against each other. Only AWS and Slack meet the panel rule in Exhibit 1.
+
+## Not covered
+
+Microsoft 365, Salesforce, Cloudflare, Datadog, Okta, Zendesk, GitLab, PagerDuty and Fastly
+are left out. None of them has a public incident archive covering 2020–2026: their status
+pages are not Statuspage, block automated access, or keep only recent incidents (Salesforce's
+API returns about the latest 100). This is a sample of vendors with real public history, not
+a census.
 
 ## Data
 
 | File | Contents |
 |---|---|
-| `data/incidents.csv` | One row per incident (50,393 incl. maintenance): vendor, incident id, start date, vendor impact label, title, permalink |
-| `data/vendors.csv` | The 47 vendors: status page URL, page creation date, first incident on record |
-| `data/weekly.csv` | The plotted weekly series and the number of vendors covered each week |
-| `incidents_weekly.png` | The chart |
+| `data/monthly.csv` | Monthly panel total plus AWS, Google Cloud, Azure, Slack |
+| `data/panel.csv` | The 36 panel vendors: first and last incident, longest silence, count |
+| `data/incidents.csv` | 47 Statuspage vendors, one row per incident since 2015, with permalink |
+| `data/incidents_big.csv` | AWS, Google Cloud, Azure, Slack, one row per incident |
+| `data/vendors.csv` | Statuspage vendor list with status page URL and page creation date |
 
-## Source and method
+## Method
 
-- **Source.** Each vendor's public Atlassian Statuspage history endpoint,
-  `https://<status page>/history.json?page=N`. Each page covers three months and goes
-  back to when the vendor's page was created. Vendors are listed in `fetch.py`.
-- **Start date.** Taken from the incident's displayed time range. Statuspage files
-  each incident under the month it was *resolved*, so the start year is inferred from
-  that month. An incident that started in a later calendar month than the one it is
-  filed under belongs to the previous year. Display strings that can't be parsed
-  produce no record; across all 47 vendors there were none.
-- **Excluded.** Scheduled maintenance: impact `maintenance`, or titles containing
-  "[Scheduled]", "scheduled maintenance" or "planned maintenance" (13.7k rows).
-  Everything else counts, including incidents labelled `none` or `minor`.
-- **Deduplication.** By vendor and incident id.
-- **Fixed panel.** Vendors whose first incident on record is before 1 Apr 2015 and
-  who are still publishing in 2026, excluding Twilio: Bitbucket, Box, CircleCI,
-  Cloudinary, Contentful, Elastic Cloud, imgix, LaunchDarkly, Linode, Mailgun, npm,
-  Pusher, Segment, Sentry, Smartsheet, Travis CI, Typeform.
-- **Validation.** `validate.py` compares parsed dates with the structured
-  `/api/v2/incidents.json` (ISO timestamps, latest 50 per vendor). On the 2026-11-21
-  run, 2,226 of 2,308 matched exactly and 17 were one day off because of timezones.
-  18 differed by more than a day, where the vendor later edited the incident's
-  "started" time. 47 recent or still-open incidents had not reached history yet.
-
-## Coverage gaps (please read before citing)
-
-- **Hyperscalers are missing.** AWS, Azure, Google Cloud, Microsoft 365, Salesforce,
-  Slack, Cloudflare, Datadog, Okta, Zendesk, GitLab, PagerDuty and Fastly don't use
-  Statuspage, or block automated access, or publish only recent or active incidents
-  (for example GCP's `incidents.json` currently holds 8 incidents, Slack's history API
-  26, Heroku's 10). None of them has a public multi-year incident archive that could
-  be counted honestly, so they are left out rather than estimated.
-- **This is a sample, not a census.** It covers 47 vendors that are reachable and
-  history-bearing. Thousands of SaaS companies exist.
-- **Thin histories.** Zoom's endpoint ignores pagination, so only Aug–Nov 2026 is
-  available. Mixpanel shows only Oct–Nov 2026, Lucid only 8 incidents, and
-  DigitalOcean only since its page was rebuilt in Dec 2022. They are included but add
-  almost nothing before those dates.
-- **Reporting is a choice.** A status page shows what the vendor chose to publish.
-  Thresholds differ between vendors and change over time. A flat count can hide real
-  change in either direction, and an empty week means nothing was posted, not that
-  nothing broke.
-- **Edges.** The first week (29 Dec 2014) holds only 1–4 Jan, and the series stops at
-  the last complete week (9–15 Nov 2026).
+- **Statuspage vendors** (`fetch.py`): every incident from each vendor's public
+  `/history.json?page=N`. Statuspage files incidents under the month they were *resolved*, so
+  the start year is worked out from that month. `validate.py` checks the parsed dates
+  against the API's exact timestamps: 96% match exactly, and most others are timezone
+  differences.
+- **AWS and Google Cloud** (`fetch_clouds.py`): their official feeds keep only a rolling
+  window (AWS `data.json`, then `historyevents.json`; Google `incidents.json`). One Internet
+  Archive snapshot per month, plus the live feed, are combined and deduplicated. Each
+  snapshot covers 12 months or more, so consecutive snapshots overlap and there are no
+  gaps. Snapshots cut off at the archive's 1 MB limit keep every complete record (newest
+  first). Old-format Google records that only point to a parent incident ("linked to a
+  single Google incident") are dropped, so each incident counts once.
+- **Azure:** azure.status.microsoft status history, all pages.
+- **Slack:** every slack-status.com day page from 2020-01-01. Incidents and outages count;
+  notices are excluded. An incident spanning several days counts once.
+- **Excluded everywhere:** scheduled maintenance. Months are grouped by the date the
+  incident started. Nov 2026 is incomplete and not plotted.
 
 ## Reproduce
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python fetch.py      # ~3 min, ~1,800 polite requests, writes data/incidents.csv + vendors.csv
-.venv/bin/python plot.py       # writes data/weekly.csv + incidents_weekly.png
-.venv/bin/python validate.py   # optional date cross-check
+.venv/bin/python fetch.py          # Statuspage vendors (~3 min)
+.venv/bin/python fetch_clouds.py   # AWS, Google Cloud, Azure, Slack (~30 min, cached in .cache/)
+.venv/bin/python plot_monthly.py   # exhibits + data/monthly.csv, data/panel.csv
+.venv/bin/python validate.py       # optional date cross-check
 ```
 
-Vendors keep editing their history, so re-running will change recent weeks slightly.
-Data fetched 2026-11-21.
+Data fetched 2026-11-21. Vendors edit their history, so a later re-run can change recent
+months slightly.
