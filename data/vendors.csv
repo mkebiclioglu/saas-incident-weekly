@@ -1,0 +1,48 @@
+vendor_id,vendor,category,status_page,page_created,incidents_since_2015,first_incident,unparsed
+github,GitHub,infra,https://www.githubstatus.com,2017-01-31,1226,2016-12-03,0
+bitbucket,Bitbucket,infra,https://bitbucket.status.atlassian.com,2013-09-26,728,2015-01-06,0
+npm,npm,infra,https://status.npmjs.org,2014-04-16,399,2015-03-13,0
+circleci,CircleCI,infra,https://status.circleci.com,2013-06-14,1051,2015-01-13,0
+travisci,Travis CI,infra,https://www.traviscistatus.com,2013-02-27,608,2015-01-06,0
+linode,Linode,infra,https://status.linode.com,2014-03-13,1925,2015-01-16,0
+digitalocean,DigitalOcean,infra,https://status.digitalocean.com,2023-01-24,646,2022-12-02,0
+scaleway,Scaleway,infra,https://status.scaleway.com,2019-11-20,2906,2020-12-07,0
+akamai,Akamai,infra,https://www.akamaistatus.com,2020-10-26,454,2021-10-01,0
+netlify,Netlify,infra,https://www.netlifystatus.com,2016-08-26,694,2016-08-22,0
+vercel,Vercel,infra,https://www.vercel-status.com,2020-04-21,638,2020-03-13,0
+render,Render,infra,https://status.render.com,2019-02-08,591,2019-02-07,0
+redhat,Red Hat,infra,https://status.redhat.com,2016-06-21,901,2017-03-08,0
+jfrog,JFrog Cloud,infra,https://status.jfrog.io,2015-06-25,1055,2016-04-29,0
+elastic,Elastic Cloud,infra,https://status.elastic.co,2013-08-02,796,2015-01-21,0
+mongodb,MongoDB Cloud,infra,https://status.cloud.mongodb.com,2019-01-31,496,2020-01-09,0
+snowflake,Snowflake,infra,https://status.snowflake.com,2018-06-19,426,2020-05-02,0
+confluent,Confluent Cloud,infra,https://status.confluent.cloud,2018-03-27,770,2018-04-24,0
+twilio,Twilio (incl. SendGrid),infra,https://status.twilio.com,2014-12-03,22494,2015-07-27,0
+mailgun,Mailgun,infra,https://status.mailgun.com,2013-07-01,385,2015-01-13,0
+pusher,Pusher,infra,https://status.pusher.com,2014-11-05,302,2015-01-07,0
+cloudinary,Cloudinary,infra,https://status.cloudinary.com,2013-08-14,316,2015-03-08,0
+imgix,imgix,infra,https://status.imgix.com,2013-07-16,271,2015-03-27,0
+sentry,Sentry,infra,https://status.sentry.io,2013-08-08,605,2015-01-22,0
+newrelic,New Relic,infra,https://status.newrelic.com,2015-06-24,653,2019-10-29,0
+loggly,Loggly,infra,https://status.loggly.com,2015-07-08,267,2015-09-08,0
+launchdarkly,LaunchDarkly,infra,https://status.launchdarkly.com,2015-01-05,753,2015-02-12,0
+segment,Segment,infra,https://status.segment.com,2013-05-07,783,2015-01-26,0
+contentful,Contentful,infra,https://status.contentful.com,2013-11-01,511,2015-01-22,0
+jira,Jira,saas,https://jira-software.status.atlassian.com,2018-11-12,557,2019-02-04,0
+confluence,Confluence,saas,https://confluence.status.atlassian.com,2018-11-12,421,2018-11-20,0
+trello,Trello,saas,https://trello.status.atlassian.com,2016-06-23,249,2016-06-10,0
+dropbox,Dropbox,saas,https://status.dropbox.com,2015-09-14,358,2015-10-05,0
+box,Box,saas,https://status.box.com,2014-06-26,626,2015-01-08,0
+hubspot,HubSpot,saas,https://status.hubspot.com,2015-01-21,887,2016-03-29,0
+zoom,Zoom,saas,https://status.zoom.us,2015-01-26,133,2026-08-25,0
+smartsheet,Smartsheet,saas,https://status.smartsheet.com,2014-09-24,684,2015-01-05,0
+airtable,Airtable,saas,https://status.airtable.com,2018-02-03,137,2020-07-08,0
+monday,monday.com,saas,https://status.monday.com,2019-09-26,564,2019-10-31,0
+figma,Figma,saas,https://status.figma.com,2016-09-15,192,2016-09-28,0
+asana,Asana,saas,https://status.asana.com,2017-07-18,211,2017-07-19,0
+lucid,Lucid,saas,https://status.lucid.co,2018-12-17,8,2019-02-12,0
+gusto,Gusto,saas,https://status.gusto.com,2017-05-10,177,2017-05-18,0
+mixpanel,Mixpanel,saas,https://status.mixpanel.com,2016-03-22,3,2026-10-08,0
+typeform,Typeform,saas,https://status.typeform.com,2013-12-02,433,2015-01-07,0
+surveymonkey,SurveyMonkey,saas,https://status.surveymonkey.com,2020-01-21,235,2020-07-26,0
+shopify,Shopify,saas,https://www.shopifystatus.com,2013-03-25,868,2015-01-02,0
