@@ -93,3 +93,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 Data fetched 2026-11-21. Vendors edit their history, so a later re-run can change recent
 months slightly.
+
+## Licence
+
+Code is MIT (see `LICENSE`). Incident records are facts compiled from each vendor's public status page and the Internet Archive; every row in `data/incidents.csv` links to its source.
